@@ -1,0 +1,4 @@
+В Windows вставьте эту команду в окно Выполнить
+
+chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+это откроет новый браузер chrome , который позволит получить доступ к запросу заголовка no 'access-control-allow-origin' .
