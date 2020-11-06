@@ -3,11 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'add-movie',
   template: `
+
   <div class="container">
 
-
       <div class="row">
-        <div class="col-md-8 order-md-1">
+        <div class="col-md-8" style="margin-right:auto; margin-left:auto;">
+          <div style="text-align:center;">
+          <h3>Add new movie</h3>
+          </div>
           <form class="needs-validation" novalidate="" enctype="multipart/form-data">
 
             <div class="mb-3">
@@ -42,7 +45,6 @@ import { Component, OnInit } from '@angular/core';
               </div>
             </div>
 
-
             <div class="mb-3">
               <label for="address">Poster</label>
               <input type="file" class="form-control" id="poster" placeholder="poster" required="true">
@@ -57,15 +59,6 @@ import { Component, OnInit } from '@angular/core';
           </form>
         </div>
       </div>
-
-      <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">© 2017-2018 Company Name</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer>
     </div>
   `,
   styles: [

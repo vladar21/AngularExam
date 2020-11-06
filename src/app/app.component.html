@@ -5,13 +5,21 @@
       <h1 class="jumbotron-heading">Angular Exam Group 3209 Rastvorov</h1>
       <p class="lead text-muted">REST приложение api/movies, позволяющее отслеживать рейтинг фильмов.</p>
       <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>&nbsp;
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <a routerLink="/all" routerLinkActive="btn btn-primary my-2">All movies</a>&nbsp;
+        <a routerLink="/add" routerLinkActive="btn btn-primary my-2">Add new movie</a>
       </p>
     </div>
   </section>
 
-<all-movies></all-movies>
-<add-movie></add-movie>
+<router-outlet></router-outlet>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">© 2020 @VRastvorov</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>
 
 </main>
