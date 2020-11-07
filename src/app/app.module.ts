@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ImgFallbackDirective } from './app-img-fallback.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    ImgFallbackDirective
   ],
   imports: [
     BrowserModule,
