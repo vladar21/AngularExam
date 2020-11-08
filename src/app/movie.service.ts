@@ -70,4 +70,12 @@ export class MovieService {
     });
   }
 
+  addMovie(formdata) {
+      this.http.post('http://localhost:4000/api/create-user', formdata).subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      )
+
+  }
+
 }
