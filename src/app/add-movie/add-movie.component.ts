@@ -54,7 +54,6 @@ import { Router } from '@angular/router';
               </div>
             </div>
 
-
             <hr class="mb-2">
             <button class="btn btn-primary btn-lg btn-block" type="submit">Add new movie's details</button>
           </form>
@@ -92,12 +91,6 @@ export class AddMovieComponent implements OnInit {
 
   submitForm() {
 
-    const myheader = new HttpHeaders().set('Content-Type', 'enctype');
-    // let body = new HttpParams();
-    // body = body.set('title', this.form.get('title').value);
-    // body = body.set('director', this.form.get('director').value);
-    // body = body.set('poster', this.form.get('poster').value);
-
     var form = new FormData();
     form.append("title", this.form.get('title').value);
     form.append("director", this.form.get('director').value);
@@ -109,16 +102,9 @@ export class AddMovieComponent implements OnInit {
 
     this.http
       .post('http://localhost:8000/api/movies', form)
-      // .do(res => {
-      //   if(res.status === '200') this.router.navigate(['/all']);
-      // })
       .subscribe(data => {
-        //apparently following line is not needed.
-        //this.router.navigateByUrl(this.url);
         window.location.href = '/all';
        })
-
-
   }
 
 
