@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { MovieService } from '../movie.service';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'add-movie',
@@ -67,7 +69,7 @@ export class AddMovieComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private _movieService: MovieService, public fb: FormBuilder, private http: HttpClient) {
+  constructor(private router: Router, public fb: FormBuilder, private http: HttpClient) {
     this.form = this.fb.group({
       title: [''],
       director: [''],
@@ -105,11 +107,17 @@ export class AddMovieComponent implements OnInit {
     console.log("file " + (this.form.get('poster').value).name);
     console.log("form " + form);
 
-    this.http.post('http://localhost:8000/api/movies', form)
-      .subscribe(
-      (response) => console.log("response " + response),
-      (error) => console.log(error)
-    )
+    this.http
+      .post('http://localhost:8000/api/movies', form)
+      // .do(res => {
+      //   if(res.status === '200') this.router.navigate(['/all']);
+      // })
+      .subscribe(data => {
+        //apparently following line is not needed.
+        //this.router.navigateByUrl(this.url);
+        window.location.href = '/all';
+       })
+
 
   }
 
